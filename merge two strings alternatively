@@ -1,0 +1,21 @@
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        
+        larger=word2
+        smaller=word1
+        
+        if len(word2)<len(word1):
+            larger=word1
+            smaller=word2
+
+        merged_word=larger[len(smaller):]
+        print("words:",smaller,',', larger,',',merged_word)
+
+        larger=''
+        for i in range (len(smaller)):
+            larger =larger+word1[i]+word2[i]
+
+        print('smaller',larger)
+        merged_word=larger+merged_word
+        #print("this is merged word:, this is length2",merged_word,length2)
+        return merged_word
